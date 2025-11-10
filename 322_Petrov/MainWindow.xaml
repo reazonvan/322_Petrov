@@ -1,0 +1,36 @@
+﻿<Window x:Class="_322_Petrov.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_322_Petrov"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+
+        <ComboBox x:Name="ThemeComboBox"
+      Grid.Column="2"
+      Width="120"
+      Height="25"
+      VerticalAlignment="Center"
+
+      SelectionChanged="ThemeComboBox_SelectionChanged">
+            <ComboBoxItem Content="Тема1" Tag="Dictionary.xaml"/>
+            <ComboBoxItem Content="Тема2" Tag="Dictionary1.xaml"/>
+        </ComboBox>
+
+        <Grid Grid.Row="0">
+            <Button x:Name="BackButton" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Back_Button_Click"/>
+        </Grid>
+
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+        <TextBlock x:Name="DateTimeNow"  HorizontalAlignment="Right" Margin="522,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="35" Width="194" Grid.Column="1"/>
+
+    </Grid>
+</Window>

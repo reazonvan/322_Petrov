@@ -1,0 +1,119 @@
+﻿<Page x:Class="_322_Petrov.Pages.RegPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:_322_Petrov.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1" 
+Width="400" 
+Margin="20"
+VerticalAlignment="Center"
+HorizontalAlignment="Center">
+
+            <TextBlock Text="Регистрация" 
+   FontSize="24" 
+   FontWeight="Bold" 
+   HorizontalAlignment="Center" 
+   Margin="0,0,0,30"/>
+
+            <Label Content="Логин"/>
+            <Grid Margin="0,0,0,15">
+                <TextBox x:Name="txtbxLog" 
+     Height="35" 
+     Padding="10"
+     ToolTip="Введите логин или почту" 
+     TextChanged="txtbxLog_TextChanged"
+     GotFocus="txtbxLog_GotFocus" 
+     LostFocus="txtbxLog_LostFocus"/>
+                <Label x:Name="lblLogHitn" 
+   Content="Введите логин" 
+   Margin="10,0,0,0"
+   VerticalAlignment="Center"
+   MouseLeftButtonUp="lblLogHitn_MouseLeftButtonUp" 
+   ToolTip="Нажмите для ввода логина" 
+   Cursor="Hand"/>
+            </Grid>
+
+            <Label Content="Пароль"/>
+            <Grid Margin="0,0,0,15">
+                <PasswordBox x:Name="passBxFrst" 
+         Height="35" 
+         Padding="10"
+         ToolTip="Введите пароль" 
+         PasswordChanged="passBxFrst_PasswordChanged"
+         GotFocus="passBxFrst_GotFocus" 
+         LostFocus="passBxFrst_LostFocus"/>
+                <Label x:Name="lblPassHitn" 
+   Content="Введите пароль" 
+   Margin="10,0,0,0"
+   VerticalAlignment="Center"
+   MouseLeftButtonUp="lblPassHitn_MouseLeftButtonUp" 
+   ToolTip="Нажмите для ввода пароля" 
+   Cursor="Hand"/>
+            </Grid>
+
+            <Label Content="Подтвердите пароль"/>
+            <Grid Margin="0,0,0,15">
+                <PasswordBox x:Name="passBxScnd" 
+         Height="35" 
+         Padding="10"
+         ToolTip="Повторите пароль" 
+         PasswordChanged="passBxScnd_PasswordChanged"
+         GotFocus="passBxScnd_GotFocus" 
+         LostFocus="passBxScnd_LostFocus"/>
+                <Label x:Name="lblPassSecHitn" 
+   Content="Повторите пароль" 
+   Margin="10,0,0,0"
+   VerticalAlignment="Center"
+   MouseLeftButtonUp="lblPassSecHitn_MouseLeftButtonUp" 
+   ToolTip="Нажмите для подтверждения пароля" 
+   Cursor="Hand"/>
+            </Grid>
+
+            <Label Content="Роль"/>
+            <ComboBox x:Name="comboBxRole" 
+  Height="35" 
+  Margin="0,0,0,15"
+  ToolTip="Выберите роль пользователя из списка" 
+  SelectionChanged="comboBxRole_SelectionChanged">
+                <ComboBoxItem Content="User" ToolTip="Обычный пользователь"/>
+                <ComboBoxItem Content="Admin" ToolTip="Администратор системы"/>
+            </ComboBox>
+
+            <Label Content="ФИО"/>
+            <Grid Margin="0,0,0,30">
+                <TextBox x:Name="txtbxFIO" 
+     Height="35" 
+     Padding="10"
+     ToolTip="Введите ФИО" 
+     TextChanged="txtbxFIO_TextChanged"
+     GotFocus="txtbxFIO_GotFocus" 
+     LostFocus="txtbxFIO_LostFocus"/>
+                <Label x:Name="lblFioHitn" 
+   Content="Введите ФИО" 
+   Margin="10,0,0,0"
+   VerticalAlignment="Center"
+   MouseLeftButtonUp="lblFioHitn_MouseLeftButtonUp" 
+   ToolTip="Нажмите для ввода ФИО" 
+   Cursor="Hand"/>
+            </Grid>
+
+            <Button x:Name="regButton" 
+Content="Зарегистрироваться" 
+Height="40"
+Click="regButton_Click" 
+ToolTip="Нажмите для завершения регистрации"/>
+        </StackPanel>
+    </Grid>
+</Page>
